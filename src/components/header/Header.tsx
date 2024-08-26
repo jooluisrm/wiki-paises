@@ -1,5 +1,7 @@
 import { DarkModeContext } from "@/Contexts/DarkModeContext";
 import { useContext, useState } from "react";
+import { FaRegMoon } from "react-icons/fa";
+import { LuSun } from "react-icons/lu";
 
 
 export const Header = () => {
@@ -25,16 +27,15 @@ export const Header = () => {
                 <h1 className="font-bold text-xl md:text-3xl">Where in the world?</h1>
                 <div onClick={DarkMode} className="flex items-center gap-1 font-semibold cursor-pointer ">
                     {ctx?.darkMode ? (
-                        <ion-icon name="sunny-outline"></ion-icon>
+                        <LuSun />
                     ) : (
-                        <ion-icon name="moon-outline"></ion-icon>
+                        <FaRegMoon />
+
                     )}
                     <p>{textDarkMode}</p>
                 </div>
 
             </div>
-            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         </header>
     );
 }

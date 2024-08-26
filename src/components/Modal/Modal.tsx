@@ -8,7 +8,7 @@ type Props = {
     onClose: () => void,
     data: any,
     array: any,
-    formatNumber: (e: any) => void
+    formatNumber: any
 }
 
 
@@ -47,7 +47,7 @@ export const Modal = ({ isOpen, onClose, data, array, formatNumber }: Props) => 
                             <div className="grid grid-cols-1">
                                 <p><span className="font-bold">Top Level Domain:</span> {array[data].topLevelDomain}</p>
                                 <p><span className="font-bold">Currencies:</span> {array[data].currencies[0].name}</p>
-                                <p className="flex gap-1"><span className="font-bold">Languages: </span>{array[data].languages?.map((idioma: string[], index: number) => (
+                                <p className="flex gap-1"><span className="font-bold">Languages: </span>{array[data].languages?.map((idioma: any, index: number) => (
                                     <p key={index}>{idioma.name}</p>
                                 ))}</p>
                             </div>

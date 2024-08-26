@@ -3,6 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import { ListaPaises } from "./ListaPaises";
 import { DarkModeContext } from "@/Contexts/DarkModeContext";
 import { Modal } from "../Modal/Modal";
+import { IoIosSearch } from "react-icons/io";
+import { FaChevronDown } from "react-icons/fa";
 
 export const Main = () => {
 
@@ -42,7 +44,7 @@ export const Main = () => {
         );
         return listaCombinada.length > 0 ? listaCombinada : listaPaisesContinentes;
     };
-    
+
     const listaFinal = combinarListas();
 
 
@@ -55,7 +57,7 @@ export const Main = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedData, setSelectedData] = useState('');
 
-    
+
     const handleOpenModal = (index: any) => {
         setSelectedData(index);
         console.log(index);
@@ -66,7 +68,7 @@ export const Main = () => {
         setSelectedData('');
     };
 
-    
+
 
     // Modal
     const ctx = useContext(DarkModeContext);
@@ -84,7 +86,7 @@ export const Main = () => {
 
                             <div className="relative flex items-center">
                                 <div className={`absolute left-4 text-gray-500 ${ctx?.darkMode === true && `text-white`}`}>
-                                    <ion-icon name="search-outline"></ion-icon>
+                                    <IoIosSearch/>
                                 </div>
 
                                 <input
@@ -101,7 +103,7 @@ export const Main = () => {
                             <div className="flex flex-col gap-1">
                                 <div onClick={openFilter} className={`flex justify-between items-center w-48 py-4 px-4 shadow-md rounded-lg ${ctx?.darkMode && `bg-[#2b3743]`} ${ctx?.darkMode == false && 'bg-white'}`}>
                                     <div>{infoSelect}</div>
-                                    <div className={rodarSeta}><ion-icon name="chevron-down-outline"></ion-icon></div>
+                                    <div className={rodarSeta}><FaChevronDown /></div>
 
                                 </div>
                                 {filterSelect &&
